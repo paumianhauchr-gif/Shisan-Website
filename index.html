@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人首頁 - My Website</title>
+    <style>
+        /* 背景改為固定淡紫色 */
+        body { 
+            background-color: #E6E6FA; /* Lavender 淡紫色 */
+            margin: 0; 
+            font-family: "微軟正黑體"; 
+            transition: 0.5s; 
+        }
+        
+        /* 導航列 Flexbox */
+        nav { 
+            background: rgba(255, 255, 255, 0.5); 
+            padding: 16px; 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+        nav a { margin: 5px 15px; text-decoration: none; color: black; font-weight: bold; }
+
+        .hero { text-align: center; padding: 40px 20px; }
+        .main-img { width: 250px; height: 250px; object-fit: cover; border-radius: 50%; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* 名片式設計區塊 */
+        .namecard-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .namecard {
+            position: relative;
+            background: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 50px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .namecard:hover { transform: translateY(-5px); }
+        .namecard p { font-size: 1.2rem; line-height: 1.8; color: #4a4a4a; position: relative; z-index: 2; margin: 0; }
+
+        /* 外部連結區塊樣式 (方塊感) */
+        .link-sections {
+            display: flex;
+            width: 100%;
+            max-width: 500px; /* 與名片同寬，視覺更整齊 */
+            margin: 10px auto 40px auto;
+            gap: 15px;
+            box-sizing: border-box;
+            padding: 0 20px;
+        }
+
+        .link-block {
+            flex: 1;
+            background-color: #ffffff;
+            border: 2.5px solid #9370DB; /* 紫色邊框 */
+            border-radius: 12px;
+            padding: 15px;
+            text-decoration: none;
+            color: #5b544b;
+            text-align: center;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .link-block:hover {
+            background-color: #9370DB;
+            color: #ffffff;
+            transform: translateY(-5px);
+        }
+
+        .link-block strong { font-size: 16px; margin-bottom: 2px; }
+        .link-block span { font-size: 12px; opacity: 0.8; }
+
+        /* 裝飾用的圓圈 */
+        .circle {
+            position: absolute;
+            width: 120px; height: 120px;
+            background-color: #9370DB;
+            border-radius: 50%;
+            bottom: -40px; right: -40px;
+            opacity: 0.15;
+        }
+        .circle2 {
+            position: absolute;
+            width: 80px; height: 80px;
+            background-color: #333;
+            border-radius: 50%;
+            top: -20px; left: -20px;
+            opacity: 0.05;
+        }
+
+        /* ------------------------------ */
+        /* RWD 響應式設定 */
+        /* ------------------------------ */
+
+        @media screen and (max-width: 800px) {
+            .namecard { max-width: 85%; }
+            .link-sections { 
+                max-width: 85%; 
+                flex-wrap: wrap;
+            }
+            .link-block { flex: 0 0 calc(50% - 8px); } /* 兩排方塊 */
+        }
+
+        @media screen and (max-width: 400px) {
+            nav a { margin: 5px 10px; font-size: 14px; }
+            .namecard { padding: 40px 20px; }
+            .namecard p { font-size: 1rem; }
+            .main-img { width: 150px; height: 150px; }
+            h1 { font-size: 1.5rem; }
+            .link-block { flex: 0 0 100%; } /* 單行長條 */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">about</a>
+        <a href="works.html">Works</a>
+    </nav>
+
+    <div class="hero">
+        <img src="1.png" alt="個人照" class="main-img">
+        <h1>歡迎來到我的個人網站！</h1>
+        
+        <div class="namecard-container">
+            <div class="namecard">
+                <div class="circle"></div>
+                <div class="circle2"></div>
+                <p>
+                    我叫十三！是一位剪輯師兼繪師。<br>
+                    喜歡畫二次元人物，頭貼為自己的繪型。<br>
+                    喜歡的犬種是比熊犬。
+                </p>
+            </div>
+        </div>
+
+        <div class="link-sections">
+        <a href="https://www.instagram.com/13_shisan_?igsh=MWJucWFncTNnYjIxMw%3D%3D&utm_source=qr" class="link-block">
+            <strong>Instagram</strong>
+            <span>IG</span>
+        </a>
+
+        <a href="https://www.youtube.com/@%E5%8D%81%E4%B8%89N0_13" class="link-block" target="_blank">
+            <strong>YouTube</strong>
+            <span>YT頻道</span>
+        </a>
+
+        <a href="https://x.com/N0_13_" class="link-block">
+            <strong>X</strong>
+            <span>推特</span>
+        </a>
+        </div>
+    </div>
+
+</body>
+</html>
