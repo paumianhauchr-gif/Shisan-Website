@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品展示 - Works</title>
+    <style>
+        /* 套用統一的淡紫色背景 */
+        body { 
+            background-color: #E6E6FA; 
+            margin: 0; 
+            font-family: "微軟正黑體"; 
+        }
+
+        /* 導航列 Flexbox */
+        nav { 
+            background: rgba(255, 255, 255, 0.5); 
+            padding: 16px; 
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a { margin: 5px 15px; text-decoration: none; color: black; font-weight: bold; }
+
+        h2 { text-align: center; margin-top: 40px; color: #5b544b; }
+
+        /* 作品容器 Flexbox */
+        .container { 
+            max-width: 1024px; 
+            margin: 0 auto; 
+            padding: 20px 20px 60px 20px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+
+        /* 作品卡片設計 */
+        .card { 
+            flex: 1 1 calc(50% - 20px); 
+            background: white; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            transition: 0.3s; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+
+        /* 💡 圖片與影片的統一格式 */
+        .card img, .card-video { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            display: block;
+            background-color: #000; /* 影片載入前顯示黑色底 */
+        }
+
+        .card-content { padding: 20px; }
+        .card-content h3 { margin: 0 0 10px 0; color: #9370DB; }
+        .card-content p { margin: 0; color: #666; font-size: 14px; line-height: 1.6; }
+
+        /* ------------------------------ */
+        /* RWD 響應式設定 */
+        /* ------------------------------ */
+
+        @media screen and (max-width: 800px) {
+            .container { gap: 15px; }
+        }
+
+        @media screen and (max-width: 400px) {
+            nav a { margin: 5px 10px; font-size: 14px; }
+            .card { flex: 0 0 100%; } 
+            .card img, .card-video { height: 180px; } 
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">about</a>
+        <a href="works.html">Works</a>
+    </nav>
+
+    <h2>我的作品集</h2>
+
+    <div class="container">
+        <div class="card">
+            <img src="2.PNG" alt="繪圖作品">
+            <div class="card-content">
+                <h3>繪圖</h3>
+                <p>使用軟體：CSP</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <video src="5.mp4" autoplay muted loop playsinline class="card-video"></video>
+            <div class="card-content">
+                <h3>動畫</h3>
+                <p>使用軟體：CSP、procreate</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <video src="4.mp4" autoplay muted loop playsinline class="card-video"></video>
+            <div class="card-content">
+                <h3>剪輯作品</h3>
+                <p><使用軟體：Pr、AE。><br>
+                <p>可點開查看</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="3.jpg" alt="作曲作品">
+            <div class="card-content">
+                <h3>作曲</h3>
+                <p>使用軟體：FL Studio 2025、GarageBand</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
